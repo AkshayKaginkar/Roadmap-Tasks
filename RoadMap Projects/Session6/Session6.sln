@@ -5,7 +5,7 @@ VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Session6", "Session6\Session6.csproj", "{F53368F1-2B49-4F5C-9388-66CC40D977F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Session6Test", "Session6Test\Session6Test.csproj", "{CF8848D6-B57F-4251-81E8-51352E073BD1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Session6Test", "Session6Test\Session6Test.csproj", "{CF8848D6-B57F-4251-81E8-51352E073BD1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

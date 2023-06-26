@@ -12,5 +12,7 @@
     <WebStackScaffolding_IsReferencingScriptLibrariesSelected>True</WebStackScaffolding_IsReferencingScriptLibrariesSelected>
     <WebStackScaffolding_LayoutPageFile />
     <WebStackScaffolding_DbContextTypeFullName>Session2.Context.ApplicationDbContext</WebStackScaffolding_DbContextTypeFullName>
+    <ActiveDebugProfile>Docker</ActiveDebugProfile>
+    <NameOfLastUsedPublishProfile>C:\Users\User\Desktop\BoilerPlate Adoption RoadMap\RoadMap Projects\Session2\Session2\Properties\PublishProfiles\registry.hub.docker.com_AkshayKaginkar.pubxml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>
