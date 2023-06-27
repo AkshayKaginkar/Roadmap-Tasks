@@ -16,16 +16,19 @@ namespace Session4.Services
 
         public bool AddProduct(Product product)
         {
+            _logger.LogInformation($"New Product Added");
             return _productRepository.AddProduct(product);
         }
 
         public void DeleteProduct(int id)
         {
+            _logger.LogInformation($"Product Deleted with id {id}");
             _productRepository.DeleteProduct(id);
         }
 
         public bool EditProduct(Product product)
         {
+            _logger.LogInformation($"Product Updated with id {product.Id}");
             return _productRepository.EditProduct(product);
         }
 
@@ -38,6 +41,7 @@ namespace Session4.Services
 
         public Product GetProductByID(int id)
         {
+            _logger.LogInformation($"Get product hit with id {id}");
             return _productRepository.GetProductByID(id);
         }
     }
