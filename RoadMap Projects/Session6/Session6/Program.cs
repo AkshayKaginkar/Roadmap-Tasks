@@ -13,9 +13,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 string con = builder.Configuration.GetConnectionString("default");
-builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(con));
-builder.Services.AddScoped<IProductRepository, ProductRepository>();
-builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(con), ServiceLifetime.Singleton);
+builder.Services.AddSingleton<IProductRepository, ProductRepository>();
+builder.Services.AddSingleton<IProductService, ProductService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -33,7 +33,7 @@ builder.Services.AddHealthChecksUI(opt =>
     opt.SetEvaluationTimeInSeconds(15);
     opt.MaximumHistoryEntriesPerEndpoint(60);
     opt.SetApiMaxActiveRequests(1);
-    opt.AddHealthCheckEndpoint("API", "/Healthz");
+    //opt.AddHealthCheckEndpoint("API", "/Healthz");
 
 }).AddInMemoryStorage();
 

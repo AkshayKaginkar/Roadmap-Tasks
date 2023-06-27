@@ -9,13 +9,12 @@ namespace Session6.Extensions
 {
     public class GetAllCheck : IHealthCheck
     {
-        readonly ProductController productController;
         readonly IProductService productService;
-
+        
         public GetAllCheck(IProductService _productService)
         {
             productService = _productService;
-            productController = new ProductController(productService);
+            
         }
         
         public async Task<HealthCheckResult> CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken = new())
@@ -23,13 +22,12 @@ namespace Session6.Extensions
             
                 try
                 {
-                Stopwatch stopwatch = Stopwatch.StartNew();
+                ProductController productController = new ProductController(productService);
                 ActionResult result =  productController.Products();
-                stopwatch.Stop();
-                var duration =stopwatch.Elapsed;
                 Dictionary<string, object> data = new Dictionary<string, object>();
-                data.Add("duration",duration.TotalSeconds);
-                return HealthCheckResult.Healthy($"duration : {data["duration"]} Sec");
+                data.Add("duration",productController.getAllResponseTime.TotalSeconds);
+                var hits = ProductController.getAllHits;
+                return HealthCheckResult.Healthy($"Hits : {hits}");
 
                 
                 }

@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Session6.Extensions;
 using Session6.Models;
 using Session6.Services;
+using System.Diagnostics;
 
 namespace Session6.Controllers
 {
@@ -10,7 +12,8 @@ namespace Session6.Controllers
     public class ProductController : ControllerBase
     {
         readonly IProductService _productService;
-
+        public static int getAllHits;
+        public TimeSpan getAllResponseTime;
         public ProductController(IProductService productService)
         {
             _productService = productService;
@@ -19,9 +22,15 @@ namespace Session6.Controllers
         [Route("/products")]
         public ActionResult Products()
         {
+            //Stopwatch stopwatch = Stopwatch.StartNew();
             List<Product> allproducts = _productService.GetAllProducts();
-          //  throw new NullReferenceException("for check");
+
+            getAllHits++;
+            //stopwatch.Stop();
+          //  getAllResponseTime = stopwatch.Elapsed;
+            //  throw new NullReferenceException("for check");
             return Ok(allproducts);
+
         }
 
         [HttpGet]
