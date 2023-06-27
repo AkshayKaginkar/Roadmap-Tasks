@@ -20,6 +20,7 @@ namespace Session6.Controllers
         public ActionResult Products()
         {
             List<Product> allproducts = _productService.GetAllProducts();
+          //  throw new NullReferenceException("for check");
             return Ok(allproducts);
         }
 

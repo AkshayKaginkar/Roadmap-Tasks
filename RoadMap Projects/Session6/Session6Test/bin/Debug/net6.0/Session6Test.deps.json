@@ -1634,7 +1634,6 @@
         "dependencies": {
           "AspNetCore.HealthChecks.UI": "6.0.5",
           "AspNetCore.HealthChecks.UI.Client": "6.0.5",
-          "AspNetCore.HealthChecks.UI.Core": "6.0.5",
           "AspNetCore.HealthChecks.UI.InMemory.Storage": "6.0.5",
           "AspNetCore.HealthChecks.UI.SqlServer.Storage": "6.0.5",
           "Microsoft.EntityFrameworkCore": "7.0.8",

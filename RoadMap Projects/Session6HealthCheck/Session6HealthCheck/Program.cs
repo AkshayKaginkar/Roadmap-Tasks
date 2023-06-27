@@ -16,8 +16,24 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddHealthChecks()
 .AddCheck<DBHealthCheck>("database");
+/*.AddCheck(builder.Configuration.GetConnectionString("default"), tags: new[]
+{
+    "db","all"
+})
+.AddUrlGroup(new Uri("http://localhost:7198/healtz"), tags: new[]
+{
+    "weatherApi","all"
+});*/
 
-builder.Services.AddHealthChecksUI().AddInMemoryStorage();
+//builder.Services.AddHealthChecksUI().AddInMemoryStorage();
+
+builder.Services.AddHealthChecksUI(opt =>
+{
+    opt.SetEvaluationTimeInSeconds(15); //time in seconds between check
+    opt.MaximumHistoryEntriesPerEndpoint(60); //maximum history of checks
+    opt.SetApiMaxActiveRequests(1); //api requests concurrency
+    opt.AddHealthCheckEndpoint("API", "/WeatherForcast"); //map health check api
+}).AddInMemoryStorage();
 
 var app = builder.Build();
 
@@ -41,6 +57,7 @@ app.MapHealthChecks("/healthz", new HealthCheckOptions
     ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
 
 });
+
 
 app.MapHealthChecksUI();
 

@@ -1,3 +1,5 @@
+using HealthChecks.UI.Client;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -22,7 +24,8 @@ string con = builder.Configuration.GetConnectionString("Key");
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(con));
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IProductService, ProductService>();
-
+builder.Services.AddHealthChecks();
+//builder.Services.AddHealthChecksUI().AddInMemoryStorage();
 
 
 IConfiguration configurationBuilder = new ConfigurationBuilder()
@@ -62,5 +65,13 @@ app.UseAuthorization();
 
 
 app.MapControllers();
+
+app.MapHealthChecks("/healthz", new HealthCheckOptions
+{
+    ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+
+});
+
+app.MapHealthChecksUI();
 
 app.Run();

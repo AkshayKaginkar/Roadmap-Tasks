@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Diagnostics.HealthChecks;
+﻿using HealthChecks.UI.Core.Data;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
 using System.Data.SqlClient;
 
 namespace Session6HealthCheck.Check
@@ -6,7 +7,7 @@ namespace Session6HealthCheck.Check
     public class DBHealthCheck : IHealthCheck
     {
         private readonly IConfiguration _configuration;
-
+      
         public DBHealthCheck(IConfiguration configuration)
         {
             _configuration = configuration;
@@ -23,6 +24,7 @@ namespace Session6HealthCheck.Check
                     using var command = connection.CreateCommand();
                     command.CommandText = "Select 1";
                     command.ExecuteScalar();
+                    
                     return HealthCheckResult.Healthy();
                 }
             }
@@ -31,5 +33,6 @@ namespace Session6HealthCheck.Check
                 return HealthCheckResult.Unhealthy(ex.Message);
             }
         }
+        
     }
 }

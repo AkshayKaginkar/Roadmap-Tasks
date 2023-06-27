@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  session1:
+    image: ${DOCKER_REGISTRY-}session1
+    build:
+      context: .
+      dockerfile: Session1/Dockerfile

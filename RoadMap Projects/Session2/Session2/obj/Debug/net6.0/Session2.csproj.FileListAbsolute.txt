@@ -267,10 +267,3 @@ C:\Users\User\Desktop\BoilerPlate Adoption RoadMap\RoadMap Projects\Session2\Ses
 C:\Users\User\Desktop\BoilerPlate Adoption RoadMap\RoadMap Projects\Session2\Session2\obj\Debug\net6.0\Session2.pdb
 C:\Users\User\Desktop\BoilerPlate Adoption RoadMap\RoadMap Projects\Session2\Session2\obj\Debug\net6.0\Session2.genruntimeconfig.cache
 C:\Users\User\Desktop\BoilerPlate Adoption RoadMap\RoadMap Projects\Session2\Session2\obj\Debug\net6.0\ref\Session2.dll
-C:\Users\User\Desktop\BoilerPlate Adoption RoadMap\RoadMap Projects\Session2\Session2\bin\Debug\net6.0\xunit.runner.visualstudio.dotnetcore.testadapter.dll
-C:\Users\User\Desktop\BoilerPlate Adoption RoadMap\RoadMap Projects\Session2\Session2\bin\Debug\net6.0\xunit.runner.reporters.netcoreapp10.dll
-C:\Users\User\Desktop\BoilerPlate Adoption RoadMap\RoadMap Projects\Session2\Session2\bin\Debug\net6.0\xunit.runner.utility.netcoreapp10.dll
-C:\Users\User\Desktop\BoilerPlate Adoption RoadMap\RoadMap Projects\Session2\Session2\bin\Debug\net6.0\xunit.abstractions.dll
-C:\Users\User\Desktop\BoilerPlate Adoption RoadMap\RoadMap Projects\Session2\Session2\bin\Debug\net6.0\xunit.assert.dll
-C:\Users\User\Desktop\BoilerPlate Adoption RoadMap\RoadMap Projects\Session2\Session2\bin\Debug\net6.0\xunit.core.dll
-C:\Users\User\Desktop\BoilerPlate Adoption RoadMap\RoadMap Projects\Session2\Session2\bin\Debug\net6.0\xunit.execution.dotnet.dll

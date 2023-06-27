@@ -22,18 +22,22 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddHealthChecks()  
-    .AddCheck<DBHealthCheck>("database");
-/*
+builder.Services.AddHealthChecks( )  
+    .AddCheck<DBHealthCheck>("database")
+    .AddCheck<GetAllCheck>("GetAllMethod");
+
+
+
 builder.Services.AddHealthChecksUI(opt =>
 {
     opt.SetEvaluationTimeInSeconds(15);
     opt.MaximumHistoryEntriesPerEndpoint(60);
     opt.SetApiMaxActiveRequests(1);
-    opt.AddHealthCheckEndpoint("API", "/healthz");
+    opt.AddHealthCheckEndpoint("API", "/Healthz");
 
 }).AddInMemoryStorage();
-*/
+
+
 //builder.Services.AddHealthChecksUI().AddInMemoryStorage();
 var app = builder.Build();
 
@@ -54,7 +58,10 @@ app.MapHealthChecks("/healthz", new HealthCheckOptions
 {
     ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
 
+
 });
+
+
 
 app.MapHealthChecksUI();
 
